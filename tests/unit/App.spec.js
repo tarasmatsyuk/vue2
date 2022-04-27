@@ -44,6 +44,12 @@ describe('App.vue', () => {
         expect(wrapper.vm.bought).toHaveLength(1);
     })
 
+    it('should be empty toBuy list', () => {
+        wrapper.vm.buy( mockItems[0]);
+        wrapper.vm.buy( mockItems[1]);
+        expect(wrapper.vm.toBuy).toHaveLength(0);
+    })
+
     it('should toggle modal', () => {
         wrapper.vm.showModal();
         expect(wrapper.vm.isModalVisible).toBe(true);
